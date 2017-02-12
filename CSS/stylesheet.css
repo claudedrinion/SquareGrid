@@ -1,0 +1,16 @@
+#container {
+    width: 600px;
+    height: 600px;
+    margin: 30px auto;
+    border-style: solid;
+    border-width: 3px;
+    border-color: blue;
+}
+
+.tile {
+    float: left;
+}
+
+button {
+    text-align: center;
+}
