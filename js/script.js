@@ -1,10 +1,15 @@
 $(document).ready(function() {
     var size = 16;
+    $('#container').height(600);
+    $('#container').width(600);
     drawGrid(size);
     
     $("button").click(function(){
         //Delete existing grid
         $(".row").remove();
+        // reset container
+        $('#container').height(600);
+        $('#container').width(600);
         var gridSize = prompt("Enter grid size:");
         drawGrid(gridSize);
     });
@@ -39,7 +44,10 @@ $(document).ready(function() {
         // it's an ugly solution that doesn't work well (see size = 64)
         // Fix: need to change the way the tiles are displayed
         if (tileLength * size > $("#container").height()) {
-            tileLength -= 0.1;
+            $('#container').height(tileLength * size);
+            $('#container').width(tileLength * size);
+            console.log($('#container').height());
+            console.log(tileLength * size);
         }
         $('.tile').height(tileLength);
         $('.tile').width(tileLength);
